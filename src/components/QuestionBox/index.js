@@ -4,8 +4,13 @@ import Desc from '../Desc';
 import Title from '../Title';
 
 import styled from 'styled-components';
+import useCurrentQuestion from '../../hooks/useCurrentQuestion';
+import useCurrentAnswer from '../../hooks/useCurrentAnswer';
 
-function QuestionBox({ question, questionLength, step, answer, setAnswer }) {
+function QuestionBox() {
+  const [answer, setAnswer] = useCurrentAnswer();
+  const question = useCurrentQuestion();
+
   return (
     <QuestionBoxWrapper>
       <Title>{question.title}</Title>
@@ -16,7 +21,7 @@ function QuestionBox({ question, questionLength, step, answer, setAnswer }) {
         setAnswer={setAnswer}
         option={question.option}
       ></Body>
-      <ActionButtons questionLength={questionLength} step={step} />
+      <ActionButtons />
     </QuestionBoxWrapper>
   );
 }
