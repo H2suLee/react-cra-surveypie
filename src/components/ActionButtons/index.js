@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 
 import useStep from '../../hooks/useStep';
 import Button from '../Button';
-import questionLengthState from '../../stores/questions/questionLength';
+import questionLengthState from '../../stores/survey/questionLength';
 
 import styled from 'styled-components';
 
