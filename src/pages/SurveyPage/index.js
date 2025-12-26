@@ -3,16 +3,19 @@
 //import { useParams } from 'react-router-dom';
 //import { useRecoilValue } from 'recoil';
 
+import { Suspense } from 'react';
 import ProgressIndicator from '../../components/ProgressIndicator';
 import QuestionBox from '../../components/QuestionBox';
 
 import styled from 'styled-components';
 function SurveyPage() {
   return (
-    <SurveyPageWrapper>
-      <ProgressIndicator />
-      <QuestionBox />
-    </SurveyPageWrapper>
+    <Suspense fallback={<div>loading..</div>}>
+      <SurveyPageWrapper>
+        <ProgressIndicator />
+        <QuestionBox />
+      </SurveyPageWrapper>
+    </Suspense>
   );
 }
 

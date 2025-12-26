@@ -9,7 +9,11 @@ import useCurrentAnswer from '../../hooks/useCurrentAnswer';
 
 function QuestionBox() {
   const [answer, setAnswer] = useCurrentAnswer();
-  const question = useCurrentQuestion();
+  const question = useCurrentQuestion(); // undefined, 데이터 준비가 안된 시간동안 로딩바를 주기 위해, 상위 컴포넌트에서 react-suspense를 줌
+  console.log('question', question);
+  if (question === undefined) {
+    return null;
+  }
 
   return (
     <QuestionBoxWrapper>
@@ -19,7 +23,7 @@ function QuestionBox() {
         type={question.type}
         answer={answer}
         setAnswer={setAnswer}
-        option={question.option}
+        option={question.options}
       ></Body>
       <ActionButtons />
     </QuestionBoxWrapper>
