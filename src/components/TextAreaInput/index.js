@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-function TextAreaInput({ answer, setAnswer, option }) {
+function TextAreaInput({ answer = '', setAnswer, option }) {
   return (
     <TextArea
       type="text"

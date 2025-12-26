@@ -1,11 +1,11 @@
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 
 import surveyState from '../stores/survey/selector';
 import useStep from './useStep';
 
 function useCurrentQuestion() {
   const step = useStep();
-  const [surveyData, setSurvey] = useRecoilState(surveyState);
+  const surveyData = useRecoilValue(surveyState);
   const questions = surveyData?.questions || [];
   /**
    * 
