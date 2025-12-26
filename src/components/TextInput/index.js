@@ -8,6 +8,8 @@ function TextInput({ answer = '', setAnswer, option }) {
       onChange={(e) => {
         setAnswer(e.target.value);
       }}
+      {...(option?.max && { maxLength: option?.max })} // 구조분해할당 방식을 통해 max 값이 있을 때만 maxLength 옵션을 넘겨줌
+      // maxLength={option?.max}
       placeholder={option.placeholder}
     ></Input>
   );

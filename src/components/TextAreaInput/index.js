@@ -9,6 +9,7 @@ function TextAreaInput({ answer = '', setAnswer, option }) {
         setAnswer(e.target.value);
       }}
       placeholder={option.placeholder}
+      {...(option?.max && { maxLength: option?.max })} // 구조분해할당 방식을 통해 max 값이 있을 때만 maxLength 옵션을 넘겨줌
     ></TextArea>
   );
 }
