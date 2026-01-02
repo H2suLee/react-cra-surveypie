@@ -33,6 +33,7 @@ const Box = styled.div`
   padding: 60px;
   display: flex;
   box-sizing: border-box;
+  position: relative;
 `;
 
 const AppWrapper = styled.div`
